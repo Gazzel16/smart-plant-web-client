@@ -2,7 +2,7 @@
 
 import { usePagination } from "@/hooks/usePagination";
 import { Table, TableBody } from "@/components/ui/table";
-import PaginationControls from "@/components/hardware/micro-nano/components/pagination/Pagination";
+import PaginationControls from "@/components/common/pagination/Pagination";
 import { dummyUsers } from "@/lib/dummy-data";
 import { useTableFilter } from "@/hooks/useTableFilter";
 import TableListHead from "./components/tables/TableListHead";
