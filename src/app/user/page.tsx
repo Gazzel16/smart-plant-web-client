@@ -8,4 +8,4 @@ function UserPage(){
         </div>
     )
 }
-export default UserPage
+export default UserPage 

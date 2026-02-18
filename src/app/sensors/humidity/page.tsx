@@ -1,6 +1,6 @@
 "use client"
 
-function MoisturePage(){
+function HumidityPage(){
     return (
         <div>
 
@@ -8,4 +8,4 @@ function MoisturePage(){
     )
 }
 
-export default MoisturePage
+export default HumidityPage
