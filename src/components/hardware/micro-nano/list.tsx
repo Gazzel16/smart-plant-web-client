@@ -57,7 +57,11 @@ function MicroNanoList() {
       </div>
       <div className="flex items-center justify-between mt-2">
 
-        <div>Micro Nano Linkeds: <span className="font-bold">{filteredData.length}</span> users</div>
+        <div>
+          <span className="italic">Micro Nano Linkeds: </span>
+          <span className="font-bold">{filteredData.length} </span>
+          <span className="italic">users</span>
+        </div>
 
         <div className="flex items-center justify-end gap-4 mt-2">
           <Button onClick={prevPage} disabled={currentPage === 1}>

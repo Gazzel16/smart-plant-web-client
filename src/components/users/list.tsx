@@ -56,7 +56,10 @@ function UserList() {
       </div>
       <div className="flex items-center justify-between mt-2">
 
-        <div>Total Users: {filteredData.length}</div>
+        <div>
+          <span className="italic">Total Users: </span>
+          <span className="font-bold">{filteredData.length}</span>
+        </div>
 
         <div className="flex items-center justify-end gap-4 mt-2">
           <Button onClick={prevPage} disabled={currentPage === 1}>
