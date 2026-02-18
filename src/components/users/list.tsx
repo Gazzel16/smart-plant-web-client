@@ -1,22 +1,13 @@
 "use client";
 
-import { Button } from "../ui/button";
 import { usePagination } from "@/hooks/usePagination";
 import { Table, TableBody } from "@/components/ui/table";
+import PaginationControls from "@/components/hardware/micro-nano/components/pagination/Pagination";
 import { dummyUsers } from "@/lib/dummy-data";
 import { useTableFilter } from "@/hooks/useTableFilter";
-
 import TableListHead from "./components/tables/TableListHead";
 import TableListRow from "./components/tables/TableListRow";
 import TableListFilterForm from "./components/tables/TableFIlterForm";
-
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
 
 function UserList() {
   const { filters, filteredData, updateFilter } = useTableFilter(dummyUsers, {
@@ -42,7 +33,6 @@ function UserList() {
       <div className="rounded border border-gray-200">
         <Table className="w-full">
           <TableListHead />
-
           <TableBody>
             <TableListFilterForm
               filters={filters}
@@ -55,41 +45,17 @@ function UserList() {
         </Table>
       </div>
       <div className="flex items-center justify-between mt-2">
-
         <div>
           <span className="italic">Total Users: </span>
           <span className="font-bold">{filteredData.length}</span>
         </div>
-
-        <div className="flex items-center justify-end gap-4 mt-2">
-          <Button onClick={prevPage} disabled={currentPage === 1}>
-            Prev
-          </Button>
-
-          <Select
-            value={currentPage.toString()}
-            onValueChange={(value) => goToPage(Number(value))}
-          >
-            <SelectTrigger className="w-32">
-              <SelectValue
-                placeholder={`Page ${currentPage} of ${totalPages}`}
-              />
-            </SelectTrigger>
-            <SelectContent>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
-                  <SelectItem key={page} value={page.toString()}>
-                    Page {page} of {totalPages}
-                  </SelectItem>
-                ),
-              )}
-            </SelectContent>
-          </Select>
-
-          <Button onClick={nextPage} disabled={currentPage === totalPages}>
-            Next
-          </Button>
-        </div>
+        <PaginationControls
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={goToPage}
+          onNextPage={nextPage}
+          onPrevPage={prevPage}
+        />
       </div>
     </div>
   );
