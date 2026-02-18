@@ -10,7 +10,7 @@ function TableListHead() {
         {HeadCells.map((cell) => (
           <TableHead 
             key={cell.id} 
-            className="py-4 bg-gray-950  border-y border-l border-r border-gray-50  text-white text-center"
+            className="py-4 bg-gray-300  border-y border-l border-r border-gray-50  text-gray-700 text-center"
           >
             {cell.label}
           </TableHead>

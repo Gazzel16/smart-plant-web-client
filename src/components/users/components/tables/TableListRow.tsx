@@ -15,15 +15,13 @@ interface TableListRowProps {
 function TableListRow({ row }: TableListRowProps) {
   return (
     <TableRow className=" border-gray-500 hover:bg-gray-100/50 transition-colors">
-      {/* Column 1: Name */}
+
       <TableCell className="py-4 border-b font-medium text-center text-gray-900">
         {row.name}
       </TableCell>
 
-      {/* Column 2: Email */}
       <TableCell className="py-4 border-b   text-center text-gray-600">{row.email}</TableCell>
 
-      {/* Column 3: Date */}
       <TableCell className="py-4 border-b  text-center  text-gray-500">
         {row.created_at}
       </TableCell>
